@@ -1,3 +1,4 @@
+import os # <-- НУЖНО ДОБАВИТЬ ЭТУ БИБЛИОТЕКУ
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 from aiogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
@@ -8,8 +9,8 @@ import time
 from datetime import datetime, timedelta
 
 # ←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←
-# ВСТАВЬ СВОЙ ТОКЕН СЮДА
-TOKEN = "8251435230:AAFudjWwYnEnCwjsIjsApKgCpNy2olWEeg8"
+# СЕЙЧАС ТОКЕН ЧИТАЕТСЯ ИЗ ПЕРЕМЕННОЙ ОКРУЖЕНИЯ "BOT_TOKEN"
+TOKEN = os.getenv("BOT_TOKEN")
 # →→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→
 
 bot = Bot(token=TOKEN, parse_mode="HTML")
